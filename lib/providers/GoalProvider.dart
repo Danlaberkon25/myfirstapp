@@ -14,8 +14,29 @@ class GoalProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void RemoveGoal(String goalName) {
-    _goals.removeWhere((goal) => goal.goalName == goalName);
+  void RemoveGoal(goal){
+    _goals.remove(goal);
+    notifyListeners();
+  }
+
+  void AddSavings(int index,int amount){
+    _goals[index].goalProgress += amount;
+    _goals[index].goalRemaining -= amount;
+    notifyListeners();
+  }
+
+  void WithdrawSavings(int index,int amount){
+    _goals[index].goalProgress -= amount;
+    _goals[index].goalRemaining += amount;
+    notifyListeners();
+  }
+
+  void UpdateGoal(int index,String name,int amount,String note,String currency){
+    _goals[index].goalName = name;
+    _goals[index].goalAmount = amount;
+    _goals[index].goalRemaining = amount;
+    _goals[index].note = note;
+    _goals[index].currency = currency;
     notifyListeners();
   }
 }

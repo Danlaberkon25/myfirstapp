@@ -1,18 +1,22 @@
 class Goal {
-  final String? goalName;
-  final int? goalAmount;
-  final int? goalRemaining;
-  final int? goalProgress;
-  final String? note;
-  final String? currency;
+  String id;
+  String goalName;
+  int goalAmount;
+  int goalRemaining;
+  int goalProgress;
+  String note;
+  String currency;
+  List<String> history = [];
+
 
   Goal({
-    this.goalName,
-    this.goalAmount,
-    this.goalRemaining,
-    this.goalProgress,
-    this.note,
-    this.currency,
+    required this.id,
+    required this.goalName,
+    required this.goalAmount,
+    required this.goalRemaining,
+    required this.goalProgress,
+    required this.note,
+    required this.currency,
 });
 
 

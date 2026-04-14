@@ -7,7 +7,7 @@ import 'dart:convert';
 
 
 class SelectedCurrencyProvider with ChangeNotifier{
-  String _selectedcurrency  = 'P';
+  String _selectedcurrency  = '₱';
 
   String get selectedcurrency => _selectedcurrency;
 
